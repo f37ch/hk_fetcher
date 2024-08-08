@@ -232,7 +232,7 @@
             const progressBar=document.getElementById("progressBar");
             const progressText=document.getElementById("progressText");
             const keyContainer=document.getElementById("keyContainer");
-            const keyCount = parseInt(keyCountElem.value);
+            const keyCount=parseInt(keyCountElem.value);
         
             document.getElementById("gameSelect").disabled = true;
             progressBar.style.width="0%";
@@ -243,6 +243,7 @@
             keyCountElem.classList.add("hidden");
             btn.classList.add("hidden");
             document.getElementById("copyAllBtn").classList.add("hidden");
+            document.getElementById("CountLabel").innerHTML=`Fetching: ${keyCount} key(s)...`;
         
             keygenActive=true;
         
@@ -300,6 +301,7 @@
         
             progressBar.style.width="100%";
             progressText.innerText="100%";
+            document.getElementById("CountLabel").innerHTML="Choose Count of Keys:";
         
             const keyList=document.getElementById("keysList");
             if (keys.length>0) {

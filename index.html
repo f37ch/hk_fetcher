@@ -11,9 +11,9 @@
             height: 100%;
             display: grid;
             place-items: center;
-            font-family: 'Arial', sans-serif;
+            font-family: "Arial", sans-serif;
             background-color: #1f2636;
-            background: url('https://media.tenor.com/9RCIDZjkhBsAAAAM/hamster-meme.gif') no-repeat center center fixed;
+            background: url("https://i.imgur.com/YshhWL5.gif") no-repeat center center fixed;
             background-size: cover;
         }
 
@@ -230,7 +230,7 @@
         let currentConfig = configs.MyCloneArmy;
         let keygenActive = false;
 
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("gameSelect").addEventListener("change",(e)=>{
                 currentConfig=configs[e.target.value];
             });
@@ -289,7 +289,7 @@
                     return null;
                 }
             
-                for (let i=0;i<7;i++) {
+                for (let i=0;i<15;i++) {
                     await delay(DELAY_MS*randomMultiplier());
                     const hasKey = await checkProgress(token);
                     updateProgress(10/keyCount);
@@ -383,7 +383,7 @@
                 try {
                     return crypto.randomUUID();
                 } catch {
-                    console.warn('Fallback for crypto.randomUUID()');
+                    console.warn("Fallback for crypto.randomUUID()");
                 }
             }
     
@@ -433,7 +433,7 @@
             });
             const result = await res.json();
             if (!res.ok) {
-                throw new Error(result.error_message||"Key generation failed");
+                throw new Error(result.error_message||"Key fetch failed");
             }
             return result.promoCode;
         }
